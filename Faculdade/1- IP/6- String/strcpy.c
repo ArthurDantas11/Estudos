@@ -12,7 +12,7 @@ int main(int argc, char const *argv[])
     //"puts" é uma função permite exibir o conteudo das strings
 
     strcpy(destino, origem); 
-    //strcy é uma função que permite atribuir duas strings, ja que nao é possivel usar "=" para atribuí-las.
+    //strcpy é uma função que permite atribuir algo nas strings, ja que nao é possivel usar "=" para atribuí-las.
 
     printf("Apos o strcy:\n");
     puts(origem);
