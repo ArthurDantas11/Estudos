@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/*2.1 Implemente uma função que tenha como valor de retorno o comprimento
+de uma lista encadeada, isto é, que calcule o número de nós de uma lista. Essa
+função deve obedecer ao protótipo:*/
+
 typedef struct Lista
 {
     int head;
