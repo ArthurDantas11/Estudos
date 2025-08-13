@@ -11,7 +11,7 @@ typedef struct
 {
     int x;
     int y;
-} Ponto;
+} Vetor;
 
 Ponto *cria_ponto();
 

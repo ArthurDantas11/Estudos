@@ -1,11 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/*2.2. Considere listas encadeadas de valores inteiros e implemente uma função
-para retornar o número de nós da lista que possuem o campo info com valores
-maiores do que n. Essa função deve obedecer ao protótipo:
-Exercicios 215
-int maiores (Lista* 1, int n);*/
+/*2.3. Implemente uma função que tenha como valor de retorno o ponteiro para
+o último nó de uma lista encadeada. Essa função deve obedecer ao protótipo:
+Lista* ultimo (Lista* 1);
+*/
 
 typedef struct Lista
 {
@@ -19,7 +18,7 @@ Lista* lista_insere(Lista* lista, int valor);
 
 void lista_percorre(Lista* lista);
 
-int maiores (Lista* l, int n);
+Lista* ultimo(Lista* l);
 
 int main()
 {
@@ -29,19 +28,14 @@ int main()
     {
         my_list = lista_insere(my_list, i + 1);
     }
-    
-    int n;
-
-    printf("digite um valor para n:\n");
-    scanf("%d", &n);
-    
 
     lista_percorre(my_list);
     printf("NULL\n");
     
-    int valores = maiores(my_list, n);
+    Lista* ultimo_node = ultimo(my_list);
     
-    printf("numero de nos da lista que possuem o campo info com valores maiores do que n: %d", valores);
+    lista_percorre(ultimo_node);
+    printf("NULL");
 
     return 0;
 }
@@ -63,26 +57,26 @@ Lista* lista_insere(Lista* lista, int valor)
 
 void lista_percorre(Lista* lista)
 {
-    for(Lista* aux = lista; aux != NULL; aux = aux->prox)
+    Lista* aux = lista;
+
+    while(aux != NULL)
     {
         printf("%d -> ", aux->info);
+        aux = aux->prox;
     }
 }
 
-int maiores (Lista* l, int n)
+Lista* ultimo(Lista* l)
 {
     Lista* aux = l;
-    int cont = 0;
+    Lista* ant = NULL;
 
     while (aux != NULL)
     {
-        if (aux->info > n)
-        {
-            cont++;        
-        }
-
+        ant = aux;
         aux = aux->prox;
     }
-
-    return cont;
+    
+    return ant;
 }
+

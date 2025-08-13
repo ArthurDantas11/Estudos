@@ -4,8 +4,8 @@
 /*estrutura da lista*/
 typedef struct Node 
 {
-    int head;
-    struct Node *tail;
+    int info;
+    struct Node *prox;
 }Node;
 
 Node *lista_cria(void)

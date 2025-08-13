@@ -3,8 +3,8 @@
 
 typedef struct Node
 {
-    int head;
-    struct Node *tail;
+    int info;
+    struct Node *prox;
 }Node;
 
 Node *lista_cria(void)
@@ -16,8 +16,8 @@ Node *insere(Node *lista, int i)
 {
     Node *novo = (Node*)malloc(sizeof(Node));
 
-    novo->head = i;
-    novo->tail = lista;
+    novo->info = i;
+    novo->prox = lista;
 
     return novo;
 }
@@ -26,9 +26,9 @@ void percorre(Node *lista)
 {
     Node *aux; //variavel auxiliar para percorrer a lista
 
-    for (aux = lista; aux != NULL; aux = aux->tail)
+    for (aux = lista; aux != NULL; aux = aux->prox)
     {
-        printf("%d->", aux->head); 
+        printf("%d->", aux->info); 
     }
 }
 

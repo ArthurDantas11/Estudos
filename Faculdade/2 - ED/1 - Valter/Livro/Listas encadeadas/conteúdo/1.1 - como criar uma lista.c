@@ -4,7 +4,7 @@
 typedef struct Lista
 {
     int info;
-    struct lista *tail;
+    struct lista *prox;
 } Lista;
 
 // Função de criação
@@ -73,7 +73,7 @@ Lista *lista_insercao(Lista *l, int i)
     Lista *novo = (Lista *)malloc(sizeof(Lista));
 
     novo->info = i;
-    novo->tail = l;
+    novo->prox = l;
 
     return novo;
 }
@@ -83,7 +83,7 @@ void lista_percorre(Lista *l)
 {
     Lista *p; /*variavel auxiliar para percorrer a lista*/
 
-    for (p = l; p != NULL; p = p->tail)
+    for (p = l; p != NULL; p = p->prox)
     {
         printf("info = %d\n", p->info);
     }
@@ -107,7 +107,7 @@ Lista *lista_busca(Lista *l, int v)
 {
     Lista *p;
 
-    for (p = l; p != NULL; p = p->tail)
+    for (p = l; p != NULL; p = p->prox)
     {
         if (p->info == v)
         {
@@ -125,7 +125,7 @@ void lista_libera(Lista *l)
     
     while (p != NULL)
     {
-        Lista *t = p->tail; /* guarda referência p/ próx. elemento */
+        Lista *t = p->prox; /* guarda referência p/ próx. elemento */
         free(p);  /* libera a memória apontada por p*/
         p = t;  /* faz p apontar para o próximo */
     }

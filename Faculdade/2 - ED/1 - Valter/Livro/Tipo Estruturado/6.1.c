@@ -12,7 +12,7 @@ typedef struct
 {
     int x;
     int y;
-}Ponto;
+}Vetor;
 
 int dentroRet (Ponto* v1, Ponto* v2, Ponto* p);
 

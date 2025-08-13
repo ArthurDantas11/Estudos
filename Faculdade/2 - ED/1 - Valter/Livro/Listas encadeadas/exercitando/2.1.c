@@ -7,8 +7,8 @@ função deve obedecer ao protótipo:*/
 
 typedef struct Lista
 {
-    int head;
-    struct Lista* tail;
+    int info;
+    struct Lista* prox;
 }Lista;
 
 Lista* lista_cria(void);
@@ -47,8 +47,8 @@ Lista* lista_insere(Lista* lista, int valor)
 {
     Lista* my_list = (Lista*)malloc(sizeof(Lista));
 
-    my_list->head = valor;
-    my_list->tail = lista;
+    my_list->info = valor;
+    my_list->prox = lista;
 
     return my_list;
 }
@@ -57,7 +57,7 @@ int comprimento (Lista* l)
 {
     int cont = 0;
 
-    for(Lista* aux = l; aux != NULL; aux = aux->tail)    {
+    for(Lista* aux = l; aux != NULL; aux = aux->prox)    {
         cont++;    
     }
 
@@ -66,8 +66,8 @@ int comprimento (Lista* l)
 
 void lista_percorre(Lista* lista)
 {
-    for(Lista* aux = lista; aux != NULL; aux = aux->tail)
+    for(Lista* aux = lista; aux != NULL; aux = aux->prox)
     {
-        printf("%d -> ", aux->head);
+        printf("%d -> ", aux->info);
     }
 }

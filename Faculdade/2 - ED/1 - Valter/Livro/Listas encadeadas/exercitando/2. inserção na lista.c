@@ -4,8 +4,8 @@
 /*estrutura da lista*/
 typedef struct Node 
 {
-    int head;
-    struct Node *tail;
+    int info;
+    struct Node *prox;
 }Node;
 
 Node *lista_cria(void)
@@ -17,8 +17,8 @@ Node *lista_incerssao(Node *lista, int valor)
 {
     Node* novo = (Node*)malloc(sizeof(Node));
 
-    novo->head = valor;
-    novo->tail = lista;
+    novo->info = valor;
+    novo->prox = lista;
 
     return novo;
 }

@@ -6,7 +6,7 @@ typedef struct
 {
     float x;
     float y;
-} Ponto;
+} Vetor;
 
 typedef struct
 {
