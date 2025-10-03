@@ -182,5 +182,5 @@ int lista_iguais(Lista* l, Lista* l2)
 
 Lista* lista_intercala(Lista* l1, Lista* l2)
 {
-    //i know, but...
+    //i know, but its time to go...
 }
